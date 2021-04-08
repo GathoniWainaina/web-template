@@ -3,14 +3,36 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { LoginSignupComponent } from './Template Style 1/login-signup/login-signup.component';
+import {LoginComponent} from './Template Style 1/login-signup/login/login.component';
+import {SignupComponent} from './Template Style 1/login-signup/signup/signup.component';
+import { HomeComponent } from './Template Style 1/home/home.component';
+import { DashboardComponent } from './Template Style 1/home/dashboard/dashboard.component';
+import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
+import {NgApexchartsModule} from 'ng-apexcharts';
+import {ReactiveFormsModule} from '@angular/forms';
+import { SettingsComponent } from './Template Style 1/home/settings/settings.component';
+import { EmptyPageComponent } from './Template Style 1/home/empty-page/empty-page.component';
+
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginSignupComponent,
+    LoginComponent,
+    SignupComponent,
+    HomeComponent,
+    DashboardComponent,
+    SettingsComponent,
+    EmptyPageComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FontAwesomeModule,
+    NgApexchartsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,234 @@
+<div [ngSwitch]="page">
+
+  <div *ngSwitchCase="1" style="margin-top: 5%">
+    <div class="container">
+      <form class="form" [formGroup]="firstFormGroup" (ngSubmit)="onClickNext(firstFormGroup.valid)">
+        <h1>Hi, Let's Get You All Set Up</h1>
+        <p>Please fill in the details to register a KEBS account</p>
+        <hr>
+
+        <h3 class="form-step-title mb-3">Step 1/3: Business Details</h3>
+
+        <div class="form-body">
+          <div class="form-group">
+            <label><b>Name of your business</b></label>
+            <input type="text" class="form-control one-column-input" aria-label="Small"
+                   aria-describedby="inputGroup-sizing-sm"
+                   placeholder="e.g. Example Business Limited"
+                   formControlName="businessName"
+                   name="businessName" required>
+
+          </div>
+
+          <div class="form-group">
+            <label><b>Line of Business</b></label>
+            <div>
+              <select aria-label="Small" aria-describedby="inputGroup-sizing-lg"
+                      class="form-control" required
+                      formControlName="lineOfBusiness"
+                      name="lineOfBusiness">
+                <option value="" disabled selected hidden>Line of Business</option>
+                <!--<option *ngFor="let industry of AllIndustryTypes" [value]="industry._id">{{industry.industryName}}</option>-->
+              </select>
+            </div>
+          </div>
+
+          <div class="mt-5">
+              <button type="submit" class="submit-button">NEXT</button>
+            <div class="mt-3">
+              <span>Already have an account ? </span><span><a routerLink="/login">Login</a></span>
+            </div>
+          </div>
+
+
+        </div>
+      </form>
+    </div>
+
+  </div>
+
+
+  <div *ngSwitchCase="2" style="margin-top: 5%">
+    <div class="container">
+      <form class="form" [formGroup]="secondFormGroup" (ngSubmit)="onClickNext(secondFormGroup.valid)">
+        <h1>Hi, Let's Get You All Set Up</h1>
+        <p>Please fill in the details to register a KEBS account</p>
+        <hr>
+
+        <h3 class="form-step-title mb-3">
+          <fa-icon [icon]="backIcon"></fa-icon>
+          Step 2/3: Plant/Branch Details
+        </h3>
+
+        <div class="form-body">
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label><b>Building name</b></label>
+                <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+                       placeholder="e.g. Afya House"
+                       formControlName="buildingName"
+                       name="buildingName" required>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="form-group">
+                <label><b>Phone number</b></label>
+                <input type="text" class="form-control"
+                       formControlName="phoneNumber"
+                       placeholder="e.g. +25408943212" name="phoneNumber" required>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label><b>Location</b></label>
+                <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+                       placeholder=""
+                       formControlName="location"
+                       name="location" required>
+
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="form-group">
+                <label><b>Street</b></label>
+                <input type="text" class="form-control"
+                       formControlName="street"
+                       placeholder="e.g. Loita street" name="street" required>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label><b>County</b></label>
+                <div>
+                  <select aria-label="Small" aria-describedby="inputGroup-sizing-lg"
+                          class="form-control" required
+                          formControlName="county"
+                          name="county">
+                    <option value="" disabled selected hidden>Select County</option>
+                    <!--              <option *ngFor="let industry of AllIndustryTypes" [value]="industry._id">{{industry.industryName}}</option>-->
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="form-group">
+                <label><b>Town</b></label>
+                <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+                       placeholder="e.g. Kipande road"
+                       formControlName="town"
+                       name="town" required>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label><b>Attach File</b></label><br>
+                <input type="file" class="rectangle"
+                       name="fileUploaded">
+              </div>
+            </div>
+
+          </div>
+
+
+          <div class="clearfix">
+            <div class="mt-4">
+              <button type="submit" class="submit-button">NEXT</button>
+            </div>
+          </div>
+
+        </div>
+      </form>
+    </div>
+
+
+  </div>
+
+  <div *ngSwitchDefault>
+    <div class="container">
+      <h1>Hi, Let's Get You All Set Up</h1>
+      <p>Please fill in the details to register a KEBS account</p>
+      <hr>
+
+      <h3 class="form-step-title">
+        Step 3/3: Confirm Details
+      </h3>
+
+      <div class="container-fluid">
+        <table>
+          <tr>
+            <th><span>Business Details</span><span class="edit-link">Edit</span></th>
+            <th><span>Contact Information</span><span class="edit-link">Edit</span></th>
+          </tr>
+          <tr>
+            <td>Example Business Limited</td>
+            <td>info@examplebusiness.com</td>
+          </tr>
+          <tr>
+            <td>AE8438GH</td>
+            <td>+254084373482</td>
+          </tr>
+          <tr>
+            <td>Manufacturing</td>
+            <td>Tsavo road</td>
+          </tr>
+          <tr>
+            <td>Cosmetics</td>
+            <td>Loita Street</td>
+          </tr>
+          <tr>
+            <td>PVT-43834HFRD</td>
+            <td>Example Building</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>2663</td>
+          </tr>
+        </table>
+        <hr>
+        <table>
+          <th><span>Plant/Branch Details</span><span class="edit-link">Edit</span></th>
+          <tr>
+            <td>Example Organization Branch</td>
+            <td>Industrial Area</td>
+            <td>+254079439499</td>
+            <td>Nairobi</td>
+          </tr>
+          <tr>
+            <td>Example Organization Branch</td>
+            <td>Industrial Area</td>
+            <td>+254079439499</td>
+            <td>Nairobi</td>
+          </tr>
+          <tr>
+            <td>Example Organization Branch</td>
+            <td>Industrial Area</td>
+            <td>+254079439499</td>
+            <td>Nairobi</td>
+          </tr>
+        </table>
+
+
+        <button type="submit" class="submit-button" style="margin: 5em 0 0 -1%">SUBMIT APPLICATION</button>
+
+      </div>
+    </div>
+
+  </div>
+</div>

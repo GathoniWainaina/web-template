@@ -1,0 +1,156 @@
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+  <h1 class="h2">Dashboard</h1>
+  <div class="btn-toolbar mb-2 mb-md-0">
+    <div class="btn-group mr-2">
+      <button class="btn btn-sm btn-outline-secondary">Share</button>
+      <button class="btn btn-sm btn-outline-secondary">Export</button>
+    </div>
+    <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
+      <span data-feather="calendar"></span>
+      This week
+    </button>
+  </div>
+</div>
+
+<div class="d-block">
+  <div class="row">
+    <div class="col-lg-3 col-sm-12">
+      <div class="card">
+        <div class="card-body">
+          <p class="card-title">Total Transactions</p>
+          <p class="card-text">12</p>
+        </div>
+
+      </div>
+    </div>
+    <div class="col-lg-3 col-sm-12">
+      <div class="card">
+        <div class="card-body">
+          <p class="card-title">Successful Payments</p>
+          <p class="card-text">100</p>
+        </div>
+
+      </div>
+    </div>
+    <div class="col-lg-3 col-sm-12">
+      <div class="card">
+        <div class="card-body">
+          <p class="card-title">Failed Payments</p>
+          <p class="card-text">12</p>
+        </div>
+
+      </div>
+    </div>
+    <div class="col-lg-3 col-sm-12">
+      <div class="card">
+        <div class="card-body">
+          <p class="card-title">Number of Customers</p>
+          <p class="card-text">78</p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="row" style="margin-top: 2%">
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <div class="chart">
+            <apx-chart
+              [series]="chart4Options.series!"
+              [chart]="chart4Options.chart!"
+              [xaxis]="chart4Options.xaxis!"
+              [dataLabels]="chart4Options.dataLabels!"
+              [grid]="chart4Options.grid!"
+              [stroke]="chart4Options.stroke!"
+              [title]="chart4Options.title!"
+            ></apx-chart>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span>View Details <fa-icon [icon]="arrowRightIcon" style="padding-left: 3px"></fa-icon></span>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <div class="chart">
+            <apx-chart style="width: 100%"
+                       [series]="chartOptions.series!"
+                       [chart]="chartOptions.chart!"
+                       [xaxis]="chartOptions.xaxis!"
+                       [stroke]="chartOptions.stroke!"
+                       [tooltip]="chartOptions.tooltip!"
+                       [dataLabels]="chartOptions.dataLabels!"
+                       [legend]="chartOptions.legend!"
+                       [markers]="chartOptions.markers!"
+                       [grid]="chartOptions.grid!"
+                       [yaxis]="chartOptions.yaxis!"
+                       [title]="chartOptions.title!"
+            ></apx-chart>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span>View Details <fa-icon [icon]="arrowRightIcon" style="padding-left: 3px"></fa-icon></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" style="margin: 2% 0% 1% 0%; border: 1px solid #e5e5e5">
+    <div class="col-lg-12 col-sm-12 table-container">
+
+      <div class="row" style="margin: 10px 30px 2em 0;">
+        <h5>Payments History</h5>
+
+        <div style="text-align: right; margin-left: auto">
+          <button type="submit" class="submit-button">VIEW ALL PAYMENTS</button>
+        </div>
+
+      </div>
+
+      <div class="row">
+        <div class="col-6 col-md-3">
+          <input class="form-control form-control-dark" type="text" placeholder="Search" aria-label="Search"
+                 style="width: 80%; height: 30px">
+        </div>
+        <div class="col-6 col-md-3">
+          <button class="btn btn-sm btn-outline-secondary mr-2">START DATE</button>
+          <button class="btn btn-sm btn-outline-secondary">END DATE</button>
+        </div>
+      </div>
+      <table>
+        <thead>
+        <th class="id">Transaction ID</th>
+        <th class="date">Date of Payment</th>
+        <th class="method">Payment Method</th>
+        <th class="invoice">Invoice No.</th>
+        <th class="amount">Amount Paid (KES)</th>
+        <th class="status">Status</th>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of tableData">
+          <td><a class="user-link" routerLink="/dashboard">{{item.transactionId}}</a></td>
+          <td>{{item.date}}</td>
+          <td>{{item.paymentMethod}}</td>
+          <td>{{item.invoiceId}}</td>
+          <td class="amount">{{item.amount}}</td>
+          <td class="status">
+            <button class="btn btn-sm btn-status-success">COMPLETE</button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+  </div>
+
+</div>
+
+
+

@@ -1,1 +1,81 @@
 /* You can add global styles to this file, and also import other style files */
+html, body {
+  height: 100vh;
+  min-width: 100%;
+  overflow-x: auto;
+  overflow-y: auto;
+  font-family: "DM Sans" !important;
+}
+
+.submit-button {
+  background-color: #0066B1;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  padding: 5px 10px 5px 10px;
+  width: 12em;
+}
+
+.submit-button:hover {
+  color: #0066B1;
+  background-color: white;
+  border: 1px solid #0066B1;
+}
+
+.btn-outline-secondary {
+  border-color: #0066B1 !important;
+  color: #0066B1 !important;
+  padding: 5px 10px 5px 10px!important;
+  width: auto;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #0066B1!important;
+  color: white!important;
+}
+
+button:disabled,
+button[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+
+/*Tables*/
+
+table {
+  width: 100%;
+  border: none;
+  margin-left: -2%;
+}
+
+th, td {
+  padding: 13px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+th.id {
+  width: 15%;
+}
+
+th.method, th.date {
+  width: 17%;
+}
+
+th.amount, td.amount {
+  width: 20%;
+  text-align: right;
+  padding-right: 42px;
+}
+
+th.status ,td.status {
+  text-align: right;
+  padding-right: 30px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
