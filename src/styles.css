@@ -13,7 +13,7 @@ html, body {
   border: none;
   border-radius: 3px;
   padding: 5px 10px 5px 10px;
-  width: 12em;
+  width: auto;
 }
 
 .submit-button:hover {

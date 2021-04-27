@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {faArrowLeft} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-settings',
@@ -7,56 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SettingsComponent implements OnInit {
 
-  userData = [
-    {
-      userID: 'janeoduong@gmail.com',
-      userName: 'Jane Doe',
-      role: 'Admin',
-      applications: [
-        {
-          applicationName: 'Application 1'
-        },
-        {
-          applicationName: 'Application 2'
-        }
-      ]
-    },
-    {
-      userID: 'janeoduong@gmail.com',
-      userName: 'Jane Doe',
-      role: 'Admin',
-      applications: [
-        {
-          applicationName: 'Application 1'
-        },
-        {
-          applicationName: 'Application 2'
-        }
-      ]
-    },
-  ];
 
-  orgApplicationsData = [
-    {
-      applicationName: 'Application 1'
-    },
-    {
-      applicationName: 'Application 2'
-    },
-    {
-      applicationName: 'Application 3'
-    }
-  ];
 
-  constructor() { }
+
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
 
-  public getApplicationNames(apps: any): any {
-    return apps.map((a: any, _: any) => {
-      return a.applicationName;
-    }).join(', ');
-  }
+
 
 }

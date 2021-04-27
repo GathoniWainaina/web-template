@@ -1,0 +1,122 @@
+<div class="container-fluid pt-3 pb-4">
+  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3">
+    <div class="pb-2 mb-3 mr-2 w-100">
+      <h5>
+        <fa-icon [icon]="arrowLeftIcon" routerLink="/complaints-page"
+                 style="padding-right: 3px; cursor: pointer"></fa-icon>
+        Jane Doe
+      </h5>
+    </div>
+    <div class="btn-toolbar mb-2 mb-md-0">
+      <div class="btn-group mr-2">
+        <button class="submit-button">SAVE</button>
+      </div>
+    </div>
+
+  </div>
+  <form>
+    <div class="form-body">
+      <div class="form-group">
+        <label><b>Email Address</b></label>
+        <input type="text" class="form-control one-column-input" aria-label="Small"
+               aria-describedby="inputGroup-sizing-sm"
+               placeholder=""
+               name="emailAddress" required>
+
+      </div>
+
+      <div class="form-group">
+        <label><b>Full Name</b></label>
+        <input type="text" class="form-control one-column-input" aria-label="Small"
+               aria-describedby="inputGroup-sizing-sm"
+               placeholder=""
+               name="fullName" required>
+
+      </div>
+      <div class="form-group">
+        <label class="mb-3"><b>User Type</b></label>
+        <div class="row ml-1">
+          <div class="form-check mr-2">
+            <label class="form-check-label" for="radio1">
+              <input type="radio" class="form-check-input" id="admin" name="optradio" value="admin"
+                     checked>Admin
+            </label>
+          </div>
+          <div class="form-check mr-2">
+            <label class="form-check-label" for="radio2">
+              <input type="radio" class="form-check-input" id="finance" name="optradio" value="finance">Finance
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label" for="radio2">
+              <input type="radio" class="form-check-input" id="developer" name="optradio"
+                     value="developer">Developer
+            </label>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="form-group">
+        <label class="mb-3"><b>Assign Applications</b></label>
+        <div class="checkbox">
+          <label for="seizedNotSeized"
+                 style="width: 100%; display: inline-flex; align-items: center;">
+            <input class="checkboxes" id="seizedNotSeized" type="checkbox"
+                   style="width: 20px"
+                   value="">Application 1</label>
+        </div>
+        <div class="checkbox">
+          <label for="sampledNotSampled"
+                 style="width: 100%; display: inline-flex; align-items: center;">
+            <input class="checkboxes" id="sampledNotSampled" type="checkbox"
+                   style="width: 20px"
+                   value="">Application 2</label>
+        </div>
+      </div>
+      <hr>
+      <div class="form-group">
+        <label class="mb-3"><b>Permissions</b></label>
+        <div class="row">
+          <div class="col">
+            <ul class="pb-3">
+              <h6>Admin</h6>
+              <li class="pb-1">Permission 1</li>
+              <li class="pb-1">Permission 2</li>
+              <li class="pb-1">Permission 3</li>
+              <li class="pb-1">Permission 4</li>
+              <li class="pb-1">Permission 5</li>
+            </ul>
+
+          </div>
+          <div class="col">
+            <ul class="pb-3">
+              <h6>Finance</h6>
+              <li class="pb-1">Permission 1</li>
+              <li class="pb-1">Permission 2</li>
+              <li class="pb-1">Permission 3</li>
+              <li class="pb-1">Permission 4</li>
+              <li class="pb-1">Permission 5</li>
+            </ul>
+          </div>
+          <div class="col">
+            <ul class="pb-3">
+              <h6>Developer</h6>
+              <li class="pb-1">Permission 1</li>
+              <li class="pb-1">Permission 2</li>
+              <li class="pb-1">Permission 3</li>
+              <li class="pb-1">Permission 4</li>
+              <li class="pb-1">Permission 5</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+      <button class="btn btn-outline-secondary" style="color: red!important; border-color: red!important;">DELETE
+        USER
+      </button>
+    </div>
+
+  </form>
+
+
+</div>

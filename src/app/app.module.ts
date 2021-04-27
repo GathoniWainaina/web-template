@@ -13,6 +13,9 @@ import {NgApexchartsModule} from 'ng-apexcharts';
 import {ReactiveFormsModule} from '@angular/forms';
 import { SettingsComponent } from './Template Style 1/home/settings/settings.component';
 import { EmptyPageComponent } from './Template Style 1/home/empty-page/empty-page.component';
+import {ToastrModule} from 'ngx-toastr';
+import { UserListComponent } from './Template Style 1/home/settings/user-list/user-list.component';
+import { UserDetailsComponent } from './Template Style 1/home/settings/user-details/user-details.component';
 
 
 
@@ -26,6 +29,8 @@ import { EmptyPageComponent } from './Template Style 1/home/empty-page/empty-pag
     DashboardComponent,
     SettingsComponent,
     EmptyPageComponent,
+    UserListComponent,
+    UserDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -33,6 +38,11 @@ import { EmptyPageComponent } from './Template Style 1/home/empty-page/empty-pag
     FontAwesomeModule,
     NgApexchartsModule,
     ReactiveFormsModule,
+    ToastrModule.forRoot({
+      timeOut: 5000,
+      positionClass: 'toast-bottom-right',
+      preventDuplicates: false,
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]

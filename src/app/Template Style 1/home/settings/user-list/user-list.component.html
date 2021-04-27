@@ -1,0 +1,145 @@
+<div class="row mt-5">
+  <div class="col-lg-2">
+    <ul class="pb-3">
+      <h6>Users</h6>
+      <li class="pb-1">All</li>
+      <li class="pb-1">Admin</li>
+      <li class="pb-1">Finance</li>
+      <li class="pb-1">Executive</li>
+      <li class="pb-1">Developer</li>
+    </ul>
+
+    <ul class="pb-5">
+      <h6>Applications</h6>
+      <li class="pb-1" *ngFor="let item of orgApplicationsData">{{item.applicationName}}</li>
+    </ul>
+
+  </div>
+  <div class="col-lg-10">
+    <div class="row" style="margin: 10px 30px 2em -2.5%;">
+      <input class="form-control form-control-dark mt-2" type="text" placeholder="Search user" aria-label="Search"
+             style="width: 40%; height: 30px">
+
+      <div style="text-align: right; margin-left: auto">
+        <button type="submit" class="submit-button" data-toggle="modal" data-target="#addUserModal">ADD USER
+        </button>
+      </div>
+
+      <div class="modal fade" id="addUserModal" tabindex="-1" role="dialog" aria-labelledby="userModalTitle"
+           aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="userModalTitle">Add User</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-body">
+                  <div class="form-group">
+                    <label><b>Email Address</b></label>
+                    <input type="text" class="form-control one-column-input" aria-label="Small"
+                           aria-describedby="inputGroup-sizing-sm"
+                           placeholder=""
+                           name="emailAddress" required>
+
+                  </div>
+                  <div class="form-group">
+                    <label><b>Full Name</b></label>
+                    <input type="text" class="form-control one-column-input" aria-label="Small"
+                           aria-describedby="inputGroup-sizing-sm"
+                           placeholder=""
+                           name="fullName" required>
+
+                  </div>
+                  <div class="form-group">
+                    <label class="mb-3"><b>User Type</b></label>
+                    <div class="row ml-1">
+                      <div class="form-check mr-2">
+                        <label class="form-check-label" for="radio1">
+                          <input type="radio" class="form-check-input" id="admin" name="optradio" value="admin"
+                                 checked>Admin
+                        </label>
+                      </div>
+                      <div class="form-check mr-2">
+                        <label class="form-check-label" for="radio2">
+                          <input type="radio" class="form-check-input" id="finance" name="optradio" value="finance">Finance
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <label class="form-check-label" for="radio2">
+                          <input type="radio" class="form-check-input" id="developer" name="optradio"
+                                 value="developer">Developer
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="mb-3"><b>Assign Applications</b></label>
+                    <div class="checkbox">
+                      <label for="seizedNotSeized"
+                             style="width: 100%; display: inline-flex; align-items: center;">
+                        <input class="checkboxes" id="seizedNotSeized" type="checkbox"
+                               style="width: 20px"
+                               value="">Application 1</label>
+                    </div>
+                    <div class="checkbox">
+                      <label for="sampledNotSampled"
+                             style="width: 100%; display: inline-flex; align-items: center;">
+                        <input class="checkboxes" id="sampledNotSampled" type="checkbox"
+                               style="width: 20px"
+                               value="">Application 2</label>
+                    </div>
+                  </div>
+
+                </div>
+
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="submit-button">Add User</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="row">
+      <table class="table-hover">
+        <thead>
+        <th class="id">User ID</th>
+        <th class="name">Name</th>
+        <th class="role">Role</th>
+        <th class="apps">Applications</th>
+        <th class="actions"></th>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of userData">
+          <td class="user-id"><a class="user-link" routerLink="/user-details">{{item.userID}}</a></td>
+          <td>{{item.userName}}</td>
+          <td>{{item.role}}</td>
+          <td>{{getApplicationNames(item.applications)}}</td>
+          <td class="actions">
+            <ul>
+              <li class="dropdown">
+                <a href="#pageSubmenu" data-toggle="collapse" class="dropdown-toggle nav-link"
+                   aria-expanded="false">
+                  <span style="color: #0066B1; font-size: 17px"><b>Actions</b></span>
+                </a>
+                <ul class="collapse" id="pageSubmenu" style="padding: 0 0 5% 10%">
+                  <li><a href="#">Edit user</a></li>
+                  <li><a href="#" style="color: indianred!important;">Delete user</a></li>
+                </ul>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

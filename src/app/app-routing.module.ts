@@ -7,6 +7,8 @@ import {HomeComponent} from './Template Style 1/home/home.component';
 import {DashboardComponent} from './Template Style 1/home/dashboard/dashboard.component';
 import {SettingsComponent} from './Template Style 1/home/settings/settings.component';
 import {EmptyPageComponent} from './Template Style 1/home/empty-page/empty-page.component';
+import {UserListComponent} from './Template Style 1/home/settings/user-list/user-list.component';
+import {UserDetailsComponent} from './Template Style 1/home/settings/user-details/user-details.component';
 
 const routes: Routes = [
   {
@@ -25,6 +27,21 @@ const routes: Routes = [
     path: 'settings-template-1', component: HomeComponent,
     children: [{path: '', component: SettingsComponent}]
   },
+
+  {
+    path: '', component: HomeComponent,
+    children: [
+      {
+        path: 'user-list', component: SettingsComponent,
+        children: [{path: '', component: UserListComponent}]
+      },
+      {
+        path: 'user-details', component: SettingsComponent,
+        children: [{path: '', component: UserDetailsComponent}]
+      },
+    ],
+  },
+
   {
     path: 'empty-template-1', component: HomeComponent,
     children: [{path: '', component: EmptyPageComponent}]

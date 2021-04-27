@@ -17,23 +17,3 @@
 }
 
 
-.user-link {
-  text-decoration-line: underline;
-  font-size: 15px;
-  color: #0066B1!important;
-  cursor: pointer;
-  -webkit-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-}
-
-/*mouse over background slide from left*/
-.user-link:hover, .user-link:active, .user-link:focus {
-  background-position: 0 0;
-  color: #252525;
-  outline: 0;
-}
-
-th.user-id ,td.user-id {
-  width: 25%;
-}
